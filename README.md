@@ -90,3 +90,8 @@ unbind %
 ```
 set-option -g allow-rename off
 ```
+
+Очистить кэш
+```
+tmux list-panes -s | sed 's/:.*//g' | xargs -n 1 tmux clear-history -t
+```
